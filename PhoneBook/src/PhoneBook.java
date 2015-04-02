@@ -11,7 +11,7 @@ class PhoneBook
 
 	private void saveToFile()
 	{
-
+		 //XMLSerializer<Person>	
 	}
 	
 	/**문자열 2개의 sorting 우선순위 비교, a가 크거나 같으면 false, b가 크면 true*/
@@ -47,15 +47,20 @@ class PhoneBook
 			people.add(new Person(name, phoneNum));
 		else
 		{
-			for(int i=0;i<people.size();i++)
+			int peopleSize=people.size();
+			for(int i=0;i<peopleSize;i++)
 			{
 				if(this.strCmp(name, people.get(i).name()))
 				{
 					people.add(i, new Person(name,phoneNum));
 					break;
 				}
-				if(i==people.size()-1)
+				if(i==(peopleSize-1))
+				{
 					people.add(new Person(name,phoneNum));
+					System.out.println(i);
+					System.out.println("here");
+				}
 			}
 		}
 	}
