@@ -31,12 +31,16 @@ class Person
 	/**이름을 변경합니다*/
 	public void changeName()
 	{
-		System.out.println("변경할 이름을 입력하세요");
 	}
 	
 	/**메세지를 반환합니다. 첫번째 요소는 수신 메세지, 두번째 요소는 발신 메세지*/
 	public String[] message()
 	{
 		return this.message;
+	}
+	
+	/**전화번호를 변경합니다*/
+	public void changeNum()
+	{
 	}
 }
