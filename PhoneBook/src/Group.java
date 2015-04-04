@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 /**
- * phonebook을 구현하는 클래스입니다. 여러명의 Person들이 저장되게 됩니다.
+ * 하나의 group을 구현하는 클래스입니다. 여러명의 Person들이 저장되게 됩니다.
  * @author createrlee
  *
  */
-class PhoneBook
+class Group
 {
 	private ArrayList<Person> people;
 
@@ -28,7 +28,7 @@ class PhoneBook
 		return false;
 	}
 
-	public PhoneBook()
+	public Group()
 	{
 		people = new ArrayList<Person>();
 	}
@@ -76,9 +76,14 @@ class PhoneBook
 			}
 	}
 
-	public void changePhone()
+	public void changePhone(String name)
 	{
-
+		int peopleSize=people.size();
+		/*name이 이름인 경우*/
+		for(int i=0;i<peopleSize;i++)
+		{
+			
+		}
 	}
 
 	public void searchPhone()
