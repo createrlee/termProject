@@ -80,19 +80,15 @@ class Group
 			}
 	}
 
-	public void changePhone(String name)
+	/**주소록에서 index의 연락처의 혹은 전화번호를 변경합니다*/
+	public void changePhone(int index,String contact)
 	{
-		int peopleSize=people.size();
-		/*name이 이름인 경우*/
-		for(int i=0;i<peopleSize;i++)
-		{
-			
-		}
 	}
 
-	public void searchPhone()
+	/**그룹 내에서 원하는 연락처를 찾아 index를 반환합니다. 없을 경우에 -1을 반환합니다.*/
+	public int searchPhone(String contact)
 	{
-
+		
 	}
 
 }
