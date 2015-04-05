@@ -3,10 +3,10 @@ import java.util.ArrayList;
 /**
  * 하나의 group을 구현하는 클래스입니다. 여러명의 Person들이 저장되게 됩니다.
  * @author createrlee
- *
  */
 class Group
 {
+	public String groupName;
 	private ArrayList<Person> people;
 
 	private void saveToFile()
@@ -30,12 +30,20 @@ class Group
 
 	public Group()
 	{
+		this.groupName=null;
+		people = new ArrayList<Person>();
+	}
+	
+	public Group(String groupName)
+	{
+		this.groupName=groupName;
 		people = new ArrayList<Person>();
 	}
 
 	/**전체 주소록을 출력합니다*/
 	public void listPhone()
 	{
+		System.out.println("Group : "+groupName);
 		for(Person iPer:people)
 			System.out.println(iPer.name()+" "+iPer.phoneNum());
 	}
@@ -56,11 +64,7 @@ class Group
 					break;
 				}
 				if(i==(peopleSize-1))
-				{
 					people.add(new Person(name,phoneNum));
-					System.out.println(i);
-					System.out.println("here");
-				}
 			}
 		}
 	}
