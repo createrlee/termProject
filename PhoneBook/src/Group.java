@@ -80,15 +80,35 @@ class Group
 			}
 	}
 
-	/**주소록에서 index의 연락처의 혹은 전화번호를 변경합니다*/
-	public void changePhone(int index,String contact)
+	/**주소록에서 index번째 요소의 연락처의 혹은 전화번호를 변경합니다
+	 * @param index :요소의 위치
+	 **/
+	public void changePhoneName(int index,String name)
 	{
+		people.get(index).changeName(name);
+	}
+	
+	/**주소록에서 index번째 요소의 연락처의 혹은 전화번호를 변경합니다
+	 * @param index :요소의 위치
+	 **/
+	public void changePhoneNum(int index,String phoneNum)
+	{
+		people.get(index).changeNum(phoneNum);
 	}
 
-	/**그룹 내에서 원하는 연락처를 찾아 index를 반환합니다. 없을 경우에 -1을 반환합니다.*/
+	/**그룹 내에서 원하는 연락처를 찾아 index를 반환합니다. 없을 경우에 -1을 반환합니다.
+	 * @param contact : 이름 혹은 전화번호
+	 **/
 	public int searchPhone(String contact)
 	{
-		
+		for(int i=0;i<people.size();i++)
+		{
+			if(people.get(i).name()==contact)
+				return i;
+			if(people.get(i).phoneNum()==contact)
+				return i;
+		}
+		return -1;//찾지 못했을 때
 	}
 
 }

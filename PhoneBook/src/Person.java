@@ -1,7 +1,6 @@
 /**
  * 한 사람의 정보를 저장합니다
  * @author createrlee
- *
  */
 class Person
 {
@@ -29,8 +28,9 @@ class Person
 	}
 	
 	/**이름을 변경합니다*/
-	public void changeName()
+	public void changeName(String name)
 	{
+		this.name=name;
 	}
 	
 	/**메세지를 반환합니다. 첫번째 요소는 수신 메세지, 두번째 요소는 발신 메세지*/
@@ -40,7 +40,8 @@ class Person
 	}
 	
 	/**전화번호를 변경합니다*/
-	public void changeNum()
+	public void changeNum(String phoneNum)
 	{
+		this.phoneNum=phoneNum;
 	}
 }

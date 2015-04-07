@@ -80,11 +80,21 @@ public class PhoneBookMain
 				 System.out.print("검색할 이름 혹은 전화번호를 입력하세요:");
 				 name=sc.nextLine();
 				 
+				 int Gindex=0;//어떤 그룹에 들어있는가
+				 int index=0;//그룹 안에서 어디에 들어있는가
+				 for(Group iGroup:phoneBook)
+				 {
+					 if((index=iGroup.searchPhone(name))>=0)
+						 break;
+					 Gindex++;
+				 }
+				 
 				 System.out.println("-----------------------------------------");
 				 System.out.println("다음 중 검색된 전화번호에 대해 수행할 작업을 선택하세요");
 				 System.out.println("1.change 2.delete 3.message 4.call 5.quit");
 				 System.out.println("-----------------------------------------");
 				 select=sc.nextLine();
+				 
 				 switch(select)
 				 {
 				 case "5":
@@ -92,8 +102,25 @@ public class PhoneBookMain
 					 break;
 				 case "1":
 				 case "change":
-					 name=sc.nextLine();//name이지만 이름 혹은 전화번호를 모두 입력 가능
-					 group.changePhone(name);
+					 System.out.println("어떤것을 변경하시겠습니까? 1.name 2.phone number");
+					 select=sc.nextLine();
+					 
+					 switch(select)
+					 {
+					 case "1":
+					 case "name":
+						 System.out.print("변경할 이름을 입력하세요: ");
+						 name=sc.nextLine();
+						 phoneBook.get(Gindex).changePhoneName(index, name);
+						 break;
+					 case "2":
+					 case "phone number":
+						 System.out.print("변경할 전화번호를 입력하세요: ");
+						 phoneNum=sc.nextLine();
+						 phoneBook.get(Gindex).changePhoneNum(index, phoneNum);
+						 break;
+					 }
+					 
 					 break;
 				 case "2":
 				 case "delete":
@@ -105,8 +132,8 @@ public class PhoneBookMain
 				 case "call":
 					 break;
 				 }
+				 
 				break;
-				
 			case "3":
 			case "group":
 				break;
