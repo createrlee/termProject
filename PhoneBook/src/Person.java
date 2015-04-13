@@ -1,18 +1,17 @@
 /**
- * 한 사람의 정보를 저장합니다
+ * 한 사람의 정보를 저장하도록 하는 클래스입니다.
  * @author createrlee
  */
 class Person
 {
 	private String name;
 	private String phoneNum;
-	private String[] message;
+	private Talk talk;
 	
 	public Person(String name,String phoneNum)
 	{
 		this.name=name;
 		this.phoneNum=phoneNum;
-		message=new String[2];
 	}
 	
 	/**이름을 반환합니다*/
@@ -34,10 +33,10 @@ class Person
 	}
 	
 	/**메세지를 반환합니다. 첫번째 요소는 수신 메세지, 두번째 요소는 발신 메세지*/
-	public String[] message()
+	/*public String[] message()
 	{
-		return this.message;
-	}
+		
+	}*/
 	
 	/**전화번호를 변경합니다*/
 	public void changeNum(String phoneNum)

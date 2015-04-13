@@ -1,3 +1,7 @@
-/XMLSerializer.class
-/.DS_Store
-/Group.class
+/ApplicationStateDefinition.class
+/Rule.class
+/StateCallbackType.class
+/Application/
+/application/
+/oodp/
+/PhoneBook.class

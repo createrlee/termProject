@@ -30,7 +30,7 @@ class Group
 
 	public Group()
 	{
-		this.groupName=null;
+		this.groupName="defalut";
 		people = new ArrayList<Person>();
 	}
 	
@@ -80,7 +80,7 @@ class Group
 			}
 	}
 
-	/**주소록에서 index번째 요소의 연락처의 혹은 전화번호를 변경합니다
+	/**주소록에서 index번째 요소의 이름을 변경합니다
 	 * @param index :요소의 위치
 	 **/
 	public void changePhoneName(int index,String name)
@@ -88,7 +88,7 @@ class Group
 		people.get(index).changeName(name);
 	}
 	
-	/**주소록에서 index번째 요소의 연락처의 혹은 전화번호를 변경합니다
+	/**주소록에서 index번째 요소의 전화번호를 변경합니다
 	 * @param index :요소의 위치
 	 **/
 	public void changePhoneNum(int index,String phoneNum)
