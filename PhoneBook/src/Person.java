@@ -14,6 +14,22 @@ class Person
 		this.phoneNum=phoneNum;
 	}
 	
+	/**문자열 2개의 sorting 우선순위 비교.<br>a가 크거나 같으면 false, b가 크면 true.<br>
+	 * 정렬하며 저장하려고 하면, 삽입하려는 요소를 a에 넣고 true가 나오는 순간 그자리에 삽입해버리면 됩니다.
+	 */
+	public static boolean strCmp(String a,String b)
+	{
+		int cmpSize=(a.length()<b.length() ? a.length():b.length());//둘중 길이가 짧은 것을 기준으로 비교
+		
+		for(int i=0;i<cmpSize;i++)
+			if(a.charAt(i)>b.charAt(i))
+				return false;
+			else if(a.charAt(i)<b.charAt(i))
+				return true;
+		
+		return false;
+	}
+	
 	/**이름을 반환합니다*/
 	public String name()
 	{
