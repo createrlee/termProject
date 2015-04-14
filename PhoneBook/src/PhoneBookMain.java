@@ -29,6 +29,7 @@ public class PhoneBookMain
 		
 		/*state 0: 메인메뉴*/
 		newDef = new ApplicationStateDefinition(0);
+		newDef.callback_Entering=(state,type)->phoneBook.list();
 		newDef.menuText = "-----------메인 메뉴-----------\n"
 				+ "     원하는 작업을 선택하세요\n"
 				+ "1.add 2.search 3.group 4.quit\n"
@@ -101,7 +102,7 @@ public class PhoneBookMain
 				+ "-----------------------------------------\n"
 				+ "->";
 		
-		// 1 -> state 11로 이동
+		// 1 -> state 11(어떤 정보를 변경할 것인지를 선택하는 메뉴)로 이동
 		newRule = new Rule();
 		newRule.Match = input -> input.startsWith("1");
 		newRule.Execute = tokens -> app.state = 11;
@@ -113,7 +114,6 @@ public class PhoneBookMain
 		newRule.Execute = tokens ->
 		{
 			phoneBook.delete(name);
-			System.out.println(name + "의 연락처가 삭제되었습니다");
 			app.state = 0;
 		};
 		newDef.rules.add(newRule);
@@ -209,7 +209,6 @@ public class PhoneBookMain
 			System.out.print("*삭제하려는 그룹을 입력하세요\n->");
 			group = sc.nextLine();
 			phoneBook.deleteGroup(group);
-			System.out.println(group + "이(가) 삭제되었습니다");
 		};
 		newDef.rules.add(newRule);
 		
@@ -258,8 +257,8 @@ public class PhoneBookMain
 			name = temp;//이름을 바꾸었으므로
 			if (!isGroupMenu)
 				app.state = 1;
-			else
-				app.state = 211;
+				else
+					app.state = 211;
 			};
 		newDef.rules.add(newRule);
 		
@@ -274,8 +273,8 @@ public class PhoneBookMain
 			phoneNum = temp;//전화번호를 바꾸었으므로
 			if (!isGroupMenu)
 				app.state = 1;
-			else
-				app.state = 211;
+				else
+					app.state = 211;
 			};
 		newDef.rules.add(newRule);
 		

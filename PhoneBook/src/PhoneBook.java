@@ -50,6 +50,11 @@ public class PhoneBook
 				}
 			}
 		}
+		
+		for(Person iPerson:entireList)
+		{
+			System.out.println(iPerson.name()+" "+iPerson.phoneNum());
+		}
 	}
 	
 	/**전체 그룹 목록을 출력합니다*/
@@ -58,7 +63,7 @@ public class PhoneBook
 		int i=0;
 		for(Group iGroup:contacts)
 		{
-			if(i>0)
+			if(i>0)//첫번째 이름없는 목록은 보여주지 않는다
 				System.out.println(iGroup.groupName());
 			i++;
 		}
@@ -110,17 +115,19 @@ public class PhoneBook
 			boolean isSuchGroup=false;
 			for(Group iGroup:contacts)//그룹을 찾는다
 			{
-				if(iGroup.groupName()==group)
+				System.out.println(iGroup.groupName());
+				System.out.println(group);
+				if(iGroup.groupName().equals(group))
 				{
 					iGroup.addPhone(name, phoneNum);
 					isSuchGroup=true;
 					break;
 				}
 			}
-			if(!isSuchGroup)
+			if(!isSuchGroup)//입력한 그룹이 존재하지 않을 때
 			{
-				contacts.add(new Group(group));
-				contacts.get(contacts.size()-1).addPhone(name, phoneNum);
+				contacts.add(new Group(group));//그룹추가
+				contacts.get(contacts.size()-1).addPhone(name, phoneNum);//추가한 그룹에 연락처 추가
 			}
 		}
 	}
