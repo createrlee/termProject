@@ -11,7 +11,7 @@ class Group
 
 	public Group()
 	{
-		this.groupName="no group";
+		this.groupName="";
 		people = new ArrayList<Person>();
 	}
 	
@@ -89,21 +89,7 @@ class Group
 		return people.get(index);
 	}
 
-	/**주소록에서 index번째 요소의 이름을 변경합니다
-	 * @param index :요소의 위치
-	 **/
-	public void changePhoneName(int index,String name)
-	{
-		people.get(index).changeName(name);
-	}
 	
-	/**주소록에서 index번째 요소의 전화번호를 변경합니다
-	 * @param index :요소의 위치
-	 **/
-	public void changePhoneNum(int index,String phoneNum)
-	{
-		people.get(index).changeNum(phoneNum);
-	}
 
 	/**그룹 내에서 원하는 연락처를 찾아 index를 반환합니다. 없을 경우에 -1을 반환합니다.
 	 * @param contact : 이름 혹은 전화번호

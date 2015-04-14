@@ -15,11 +15,12 @@ public class PhoneBookMain
 	static String group = null;
 	static String temp = null;
 	static boolean isGroupMenu = false;
+	static PhoneBook phoneBook;
 	
 	public static void main(String[] args)
 	{
 		Scanner sc = new Scanner(System.in);
-		PhoneBook phoneBook = new PhoneBook();
+		phoneBook = new PhoneBook();
 		
 		/*console application을 이용하기 위해 몇가지 변수를 정의*/
 		ConsoleApplication app = new ConsoleApplication();
