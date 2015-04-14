@@ -6,31 +6,12 @@ import java.util.ArrayList;
  */
 class Group
 {
-	public String groupName;
+	private String groupName;
 	private ArrayList<Person> people;
-
-	private void saveToFile()
-	{
-		 //XMLSerializer<Person>	
-	}
-	
-	/**문자열 2개의 sorting 우선순위 비교, a가 크거나 같으면 false, b가 크면 true*/
-	private boolean strCmp(String a,String b)
-	{
-		int cmpSize=(a.length()<b.length() ? a.length():b.length());//둘중 길이가 짧은 것을 기준으로 비교
-		
-		for(int i=0;i<cmpSize;i++)
-			if(a.charAt(i)>b.charAt(i))
-				return false;
-			else if(a.charAt(i)<b.charAt(i))
-				return true;
-		
-		return false;
-	}
 
 	public Group()
 	{
-		this.groupName="defalut";
+		this.groupName="no group";
 		people = new ArrayList<Person>();
 	}
 	
@@ -38,6 +19,18 @@ class Group
 	{
 		this.groupName=groupName;
 		people = new ArrayList<Person>();
+	}
+	
+	/**그룹 이름을 반환합니다*/
+	public String groupName()
+	{
+		return this.groupName;
+	}
+	
+	/**그룹 이름을 바꿉니다*/
+	public void changeGroupName(String toChange)
+	{
+		this.groupName=toChange;
 	}
 
 	/**전체 주소록을 출력합니다*/
@@ -58,7 +51,7 @@ class Group
 			int peopleSize=people.size();
 			for(int i=0;i<peopleSize;i++)
 			{
-				if(this.strCmp(name, people.get(i).name()))
+				if(Person.strCmp(name, people.get(i).name()))
 				{
 					people.add(i, new Person(name,phoneNum));
 					break;
@@ -78,6 +71,22 @@ class Group
 				people.remove(i);
 				break;
 			}
+	}
+	
+	/**
+	 * Group 내의 people 객체의 크기를 반환합니다
+	 */
+	public int groupSize()
+	{
+		return people.size();
+	}
+	
+	/**
+	 * 주소록에서 index번째의 Person객체를 반환합니다
+	 */
+	public Person getContact(int index)
+	{
+		return people.get(index);
 	}
 
 	/**주소록에서 index번째 요소의 이름을 변경합니다
