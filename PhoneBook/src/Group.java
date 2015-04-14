@@ -33,7 +33,7 @@ class Group
 		this.groupName=toChange;
 	}
 
-	/**전체 주소록을 출력합니다*/
+	/**그룹의 전체 주소록을 출력합니다*/
 	public void listPhone()
 	{
 		System.out.println("Group : "+groupName);
