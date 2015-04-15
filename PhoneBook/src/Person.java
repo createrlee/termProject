@@ -22,11 +22,12 @@ class Person
 		int cmpSize=(a.length()<b.length() ? a.length():b.length());//둘중 길이가 짧은 것을 기준으로 비교
 		
 		for(int i=0;i<cmpSize;i++)
+		{
 			if(a.charAt(i)>b.charAt(i))
 				return false;
 			else if(a.charAt(i)<b.charAt(i))
 				return true;
-		
+		}
 		return false;
 	}
 	

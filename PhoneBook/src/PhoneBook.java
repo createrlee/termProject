@@ -63,24 +63,26 @@ public class PhoneBook
 			entireList.clear();
 			for (Group iGroup : contacts)//각 그룹에 대해
 			{
-				
 				for (int i = 0; i < iGroup.groupSize(); i++)//그룹안의 각 사람에 대해
 				{
-					if (entireList.size() == 0)//전체목록이 비어있으면 그냥 연락처 삽입
+					if (entireList.isEmpty())//전체목록이 비어있으면 그냥 연락처 삽입
 						entireList.add(iGroup.getContact(i));
 					else
 					//요소들을 정렬하면서 전체목록에 저장한다
 					{
 						int entireListSize = entireList.size();
 						boolean isInserted = false;
-						for (int iList = 0; i < entireListSize; i++)
+						
+						for (int iList = 0; iList < entireListSize; iList++)
 						{
 							//하나씩 비교하여 맞는 위치에 저장
 							if (Person.strCmp(iGroup.getContact(i).name(), entireList.get(iList).name()))
 							{
 								entireList.add(iList, iGroup.getContact(i));
 								isInserted = true;
+								
 								break;
+								
 							}
 						}
 						if (!isInserted)//중간에 들어가지 않은 경우 끝에 저장
@@ -178,6 +180,7 @@ public class PhoneBook
 					contacts.get(contacts.size() - 1).addPhone(name, phoneNum);//추가한 그룹에 연락처 추가
 				}
 			}
+			System.out.println("거기");
 		}
 		/*그룹모드*/
 		else

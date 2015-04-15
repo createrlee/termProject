@@ -89,11 +89,30 @@ class Group
 		return people.get(index);
 	}
 
+	/**
+	 * 연락처의 이름을 변경합니다
+	 * @param index : 변경할 연락처의 index
+	 * @param toChange : 바꿀 이름
+	 */
+	public void changeName(int index,String toChange)
+	{
+		people.get(index).changeName(toChange);
+	}
 	
+	/**
+	 * 연락처의 전화번호를 변경합니다
+	 * @param index :변경할 연락처의 index
+	 * @param toChange : 바꿀 전화번호
+	 */
+	public void changePhoneNum(int index,String toChange)
+	{
+		people.get(index).changeNum(toChange);
+	}
 
-	/**그룹 내에서 원하는 연락처를 찾아 index를 반환합니다. 없을 경우에 -1을 반환합니다.
+	/**
+	 * 그룹 내에서 원하는 연락처를 찾아 index를 반환합니다. 없을 경우에 -1을 반환합니다.
 	 * @param contact : 이름 혹은 전화번호
-	 **/
+	 */
 	public int searchPhone(String contact)
 	{
 		for(int i=0;i<people.size();i++)
