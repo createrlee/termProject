@@ -142,6 +142,11 @@ public class PhoneBook
 	/**그룹을 삭제합니다*/
 	public void deleteGroup(String groupName)
 	{
+		if(groupName=="")//이름없는 기본그룹은 삭제할 수 없도록 한다
+		{
+			System.out.println("해당 그룹이 존재하지 않습니다!");
+			return;
+		}
 		for (int i = 0; i < contacts.size(); i++)
 		{
 			if (contacts.get(i).groupName().equals(groupName))
@@ -180,7 +185,6 @@ public class PhoneBook
 					contacts.get(contacts.size() - 1).addPhone(name, phoneNum);//추가한 그룹에 연락처 추가
 				}
 			}
-			System.out.println("거기");
 		}
 		/*그룹모드*/
 		else
@@ -228,7 +232,7 @@ public class PhoneBook
 	 */
 	public void change(String name, String toChange, int select)
 	{
-		int gLoc = 0;//검색된 연락처가 있는 그룹의 index
+		int gLoc = -1;//검색된 연락처가 있는 그룹의 index
 		int searched = -1;//검색된 연락처의 index
 		for (Group iGroup : contacts)
 		{
@@ -241,6 +245,7 @@ public class PhoneBook
 		{
 			return;
 		}
+		System.out.println("group: "+gLoc+" name: "+searched);
 		
 		/*select는 1,2,3이외의 값 들어오지 않으므로 예외처리 필요없다*/
 		switch (select)

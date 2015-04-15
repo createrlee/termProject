@@ -51,12 +51,12 @@ class Group
 			int peopleSize=people.size();
 			for(int i=0;i<peopleSize;i++)
 			{
-				if(Person.strCmp(name, people.get(i).name()))
+				if(Person.strCmp(name, people.get(i).name()))//순서대로 정렬하며 저장
 				{
 					people.add(i, new Person(name,phoneNum));
 					break;
 				}
-				if(i==(peopleSize-1))
+				if(i==(peopleSize-1))//중간에 들어가지 않은 경우 끝에 저장
 					people.add(new Person(name,phoneNum));
 			}
 		}
@@ -66,7 +66,7 @@ class Group
 	public void deletePhone(String name)
 	{
 		for(int i=0;i<people.size();i++)
-			if(people.get(i).name()==name)
+			if(people.get(i).name().equals(name))
 			{
 				people.remove(i);
 				break;
@@ -117,9 +117,9 @@ class Group
 	{
 		for(int i=0;i<people.size();i++)
 		{
-			if(people.get(i).name()==contact)
+			if(people.get(i).name().equals(contact))
 				return i;
-			if(people.get(i).phoneNum()==contact)
+			if(people.get(i).phoneNum().equals(contact))
 				return i;
 		}
 		return -1;//찾지 못했을 때

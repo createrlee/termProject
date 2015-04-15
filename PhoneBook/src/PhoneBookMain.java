@@ -61,7 +61,7 @@ public class PhoneBookMain
 		newRule.Match = input -> input.startsWith("2");
 		newRule.Execute = tokens ->
 		{
-			System.out.println("검색할 연락처의 이름을 입력하세요");
+			System.out.print("검색할 연락처의 이름을 입력하세요\n->");
 			name = sc.nextLine();
 			phoneBook.search(name);
 			app.state = 1;
