@@ -272,7 +272,7 @@ public class PhoneBook
 	/**선택된 연락처의 메세지 대화창을 띄웁니다*/
 	public void message(String name)
 	{
-		System.out.println("<--message: "+name+"-->");
+		System.out.println("<-----message with "+name+"----->");
 		for(Group iGroup:contacts)
 		{
 			iGroup.message(name);
@@ -282,6 +282,10 @@ public class PhoneBook
 	/**선택된 연락처의 전화 창을 띄웁니다*/
 	public void call(String name)
 	{
-		
+		System.out.println("<-----phonecall with "+name+"----->");
+		for(Group iGroup:contacts)
+		{
+			iGroup.call(name);
+		}
 	}
 }

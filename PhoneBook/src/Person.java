@@ -56,6 +56,12 @@ class Person
 		talk.message();
 	}
 	
+	/**이 사람과의 통화기록을 표시합니다*/
+	public void call()
+	{
+		talk.call();
+	}
+	
 	/**전화번호를 변경합니다*/
 	public void changeNum(String phoneNum)
 	{

@@ -138,4 +138,18 @@ class Group
 		else
 			return;
 	}
+	
+	/**
+	 * 그룹 내에서 원하는 연락처를 찾아 통화기록을 표시합니다
+	 */
+	public void call(String name)
+	{
+		int temp=this.searchPhone(name);
+		if(temp!=-1)
+		{
+			people.get(temp).call();
+		}
+		else
+			return;
+	}
 }
