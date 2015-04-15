@@ -12,6 +12,7 @@ class Person
 	{
 		this.name=name;
 		this.phoneNum=phoneNum;
+		talk=new Talk();
 	}
 	
 	/**문자열 2개의 sorting 우선순위 비교.<br>a가 크거나 같으면 false, b가 크면 true.<br>
@@ -49,11 +50,11 @@ class Person
 		this.name=name;
 	}
 	
-	/**메세지를 반환합니다. 첫번째 요소는 수신 메세지, 두번째 요소는 발신 메세지*/
-	/*public String[] message()
+	/**이 사람과의 메세지 창을 띄웁니다*/
+	public void message()
 	{
-		
-	}*/
+		talk.message();
+	}
 	
 	/**전화번호를 변경합니다*/
 	public void changeNum(String phoneNum)

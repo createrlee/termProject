@@ -125,4 +125,17 @@ class Group
 		return -1;//찾지 못했을 때
 	}
 
+	/**
+	 * 그룹 내에서 원하는 연락처를 찾아 메세지창을 띄웁니다
+	 */
+	public void message(String name)
+	{
+		int temp=this.searchPhone(name);
+		if(temp!=-1)
+		{
+			people.get(temp).message();
+		}
+		else
+			return;
+	}
 }
